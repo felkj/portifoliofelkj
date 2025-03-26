@@ -1,4 +1,4 @@
-# Portfólio Felipe - felkj
+# Portfólio Felipe
 
 Este repositório contém o código-fonte do meu portfólio pessoal. O site foi desenvolvido utilizando **React.js**, **Bootstrap**, **Node.js**, **HTML**, **CSS** e **JavaScript**. O objetivo é exibir meus projetos, habilidades e experiências de forma organizada, permitindo que recrutadores e colaboradores vejam meu trabalho e trajetória profissional.
 
