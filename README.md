@@ -4,7 +4,7 @@ Este repositório contém o código-fonte do meu portfólio pessoal. O site foi 
 
 ## Visite o site
 
-Se você não deseja fazer um fork, você pode acessar o portfólio diretamente através do seguinte link: [Portfólio Felipe](https://portifoliofelkj.netlify.app)
+Se você não deseja fazer um fork, pode acessar o portfólio diretamente através do seguinte link: [Portfólio Felipe](https://portifoliofelkj.netlify.app)
 
 ## Estrutura do projeto
 
@@ -32,31 +32,29 @@ Se você deseja rodar o site localmente, siga os passos abaixo:
 1. Clone este repositório:
    ```bash
    git clone https://github.com/felkj/portifoliofelkj.git
-Navegue até o diretório do projeto:
+   ```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd portifoliofelkj
+   ```
+3. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
+4. Execute o projeto:
+   ```bash
+   npm start
+   ```
+5. Acesse o portfólio em seu navegador:
+   ```
+   http://localhost:3000
+   ```
 
-  ```bash
-  cd portifoliofelkj
-Instale as dependências do projeto:
+## Tecnologias utilizadas
 
-```bash
-npm install
-Execute o projeto:
-
-```bash
-npm start
-Acesse o portfólio em seu navegador:
-
-```bash
-http://localhost:3000
-Tecnologias utilizadas
-React.js: Biblioteca JavaScript para construção de interfaces de usuário.
-
-Bootstrap: Framework CSS para layout responsivo.
-
-Node.js: Ambiente de execução JavaScript no servidor.
-
-HTML5: Linguagem de marcação para estruturação das páginas.
-
-CSS3: Para estilização personalizada.
-
-JavaScript: Para a lógica de interação do site.
+- **React.js**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Bootstrap**: Framework CSS para layout responsivo.
+- **Node.js**: Ambiente de execução JavaScript no servidor.
+- **HTML5**: Linguagem de marcação para estruturação das páginas.
+- **CSS3**: Para estilização personalizada.
+- **JavaScript**: Para a lógica de interação do site.
