@@ -57,7 +57,8 @@ export const Banner = () => {
                             eficientes e designs envolventes. Seja no desenvolvimento web, design gráfico ou no universo
                              dos games e cultura pop, estou sempre explorando 
                             novas formas de criar e impactar. Bem-vindo ao meu portfólio!</p>
-                            <button onClick={() => console.log('connect')}>Conecte-se<ArrowRightCircle size={25}/></button>
+                            <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank"><button onClick={() => console.log('connect')}>Conecte-se<ArrowRightCircle size={25}/></button></a>
+              
                      </div>}       
                     </TrackVisibility>  
                     </Col>

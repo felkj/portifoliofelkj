@@ -8,7 +8,6 @@ export const Contact = () => {
 
     const formInitialDetails ={
         firstName: '',
-        lastName: '',
         email: '',
         phone:'',
         message: ''        
@@ -36,20 +35,26 @@ export const Contact = () => {
                 },
                 body: JSON.stringify(formDetails),
             });
-            
+    
+            // Verifique o status HTTP da resposta
+            if (!response.ok) {
+                // Se o código de status não for 2xx, trata como erro
+                throw new Error('Erro na comunicação com o servidor');
+            }
+    
             let result = await response.json();
-            
             setButtonText("Enviar");
             setFormDetails(formInitialDetails);
-            
-            if (result.code === 200) {
+    
+            // Verifique a resposta com base na estrutura do servidor (por exemplo, result.message ou result.code)
+            if (result.success) {
                 setStatus({ success: true, message: 'Mensagem enviada com sucesso!' });
             } else {
                 setStatus({ success: false, message: 'Ocorreu um erro ao enviar a mensagem!' });
             }
         } catch (error) {
             setButtonText("Enviar");
-            setStatus({ success: false, message: 'Erro na comunicação com o servidor.' });
+            setStatus({ success: false, message: error.message || 'Erro na comunicação com o servidor.' });
             console.error("Erro:", error);
         }
     };
@@ -73,11 +78,8 @@ export const Contact = () => {
                     <h2>Entre em contato</h2>
                     <form onSubmit={handleSubmit}>
                         <Row>
-                            <Col sm={6} className="px-1">
-                            <input type="text" value={formDetails.firstName} placeholder="Primeiro nome" onChange={(e) => onFormUpdate('firstName', e.target.value)}/>
-                            </Col>
-                            <Col sm={6} className="px-1">
-                            <input type="text" value={formDetails.lastName} placeholder="Segundo nome" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                            <Col sm={12} className="px-1">
+                            <input type="text" value={formDetails.firstName} placeholder="Nome" onChange={(e) => onFormUpdate('firstName', e.target.value)}/>
                             </Col>
                             <Col sm={6} className="px-1">
                             <input type="email" value={formDetails.email} placeholder="E-mail" onChange={(e) => onFormUpdate('email', e.target.value)}/>

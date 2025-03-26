@@ -229,7 +229,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
-
+.vvd a, span{
+  text-decoration: none;
+}
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -285,6 +287,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .banner img{
   width: 450px;
+}
+.banner a{
+  text-decoration: none;
 }
 @keyframes updown {
     0% {
