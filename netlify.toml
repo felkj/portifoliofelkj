@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 [build]
   command = "CI= npm run build"
   publish = "build"
 
 [context.production.environment]
+=======
+[build]
+  command = "CI= npm run build"
+  publish = "build"
+
+[context.production.environment]
+>>>>>>> 4e738b3c30fd85d9998a84e2f1a45c3ab20df4ed
   NODE_VERSION = "18"
