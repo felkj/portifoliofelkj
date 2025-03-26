@@ -29,7 +29,7 @@ export const Contact = () => {
         e.preventDefault();
         setButtonText('Enviando...');
         try {
-            let response = await fetch("shimmering-arithmetic-0e3ce6.netlify.app/contact", {
+            let response = await fetch("https://portifoliofelkjemail.onrender.com/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "Application/json;charset=utf-8",
@@ -89,13 +89,14 @@ export const Contact = () => {
                                 <textarea rows="6" value={formDetails.message} placeholder="Mensagem" onChange={(e) => onFormUpdate('message', e.target.value)}/>
                                 <button type="submit"><span>{buttonText}</span></button>
                             </Col>
+                                
+                        </Row>
                                 {
                                     status.message &&
                                     <Col>
                                      <p className={status.success === false ? "Erro" : "Sucesso"}>{status.message}</p>
                                     </Col>
                                 }
-                        </Row>
                     </form>
                     </div>}
                     </TrackVisibility>
