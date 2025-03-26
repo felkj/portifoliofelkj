@@ -31,30 +31,22 @@ Se você deseja rodar o site localmente, siga os passos abaixo:
 
 1. Clone este repositório:
    ```bash
-   https://github.com/felkj/portifoliofelkj.git
+   git clone https://github.com/felkj/portifoliofelkj.git
 Navegue até o diretório do projeto:
 
-bash
-Copiar
-Editar
-cd NOME_DO_REPOSITORIO
+  ```bash
+  cd portifoliofelkj
 Instale as dependências do projeto:
 
-bash
-Copiar
-Editar
+```bash
 npm install
 Execute o projeto:
 
-bash
-Copiar
-Editar
+```bash
 npm start
 Acesse o portfólio em seu navegador:
 
-bash
-Copiar
-Editar
+```bash
 http://localhost:3000
 Tecnologias utilizadas
 React.js: Biblioteca JavaScript para construção de interfaces de usuário.
