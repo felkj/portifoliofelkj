@@ -30,7 +30,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #0D1010 !important;
+  background: radial-gradient(ellipse at bottom, rgb(21, 36, 36) 0%, #090A0F 100%);
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -232,16 +232,33 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .vvd a, span{
   text-decoration: none;
 }
+
+@media (min-width:450px){
+  img.logo{
+    width: 150px;
+  }
+}
+@media (min-width:350px){
+  img.logo{
+    width: 150px;
+  }
+}
+@media (min-width:250px){
+  img.logo{
+    width: 150px;
+  }
+}
 /************ Banner Css ************/
-.banner {
+.banner{
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
-.banner .tagline {
+
+.banner .tagline  {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
@@ -306,17 +323,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #667;
 }
 
+@media screen and (max-width: 768px) {
+ .banner img{
+  display: none;
+ }
+}
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
+  padding: 50px 0 50px 0;
   position: relative;
+
 }
 .skill-bx {
-  background: #151515;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
+  background-color: #121212;
+
 }
 .skill h2 {
 	font-size: 45px;
@@ -330,7 +354,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin: 14px 0 75px 0;
 }
 .skill-slider {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   position: relative;
 }
@@ -478,8 +502,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90deg, rgba(54,88,88,1) 0%, rgba(13,16,16,1) 100%);
-  padding: 60px 0 200px 0;
+
+  padding: 60px 0 100px 0;
 }
 .contact img {
   width: 92%;
@@ -550,24 +574,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  margin-top: 60px;
+  padding-top: 60px;
   padding: 0 0 50px 0;
+  background-color: #121212;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.newsletter-bx {
-  background: #FFFFFF;
-  border-radius: 55px;
-  color: #121212;
-  padding: 85px 125px;
-  margin-bottom: 80px;
-  margin-top: -122px;
-}
-.newsletter-bx h3 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.2em;
+
+.ajust{
+  height: 20px;
 }
 .new-email-bx {
   background: #fff;
@@ -626,3 +642,158 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+/* Fundo do Modal */
+.custom-project-modal .modal-content {
+    background-color: #121212; /* Cor de fundo escura do seu tema */
+    color: #fff; /* Texto branco */
+    font-family: 'Centra', sans-serif; /* Sua fonte customizada */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda sutil como outros elementos */
+    border-radius: 20px; /* Bordas arredondadas */
+}
+
+/* Cabeçalho do Modal */
+.custom-project-modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
+    padding: 20px 30px;
+}
+
+.custom-project-modal-header .modal-title {
+    font-size: 28px; /* Tamanho do título do projeto */
+    font-weight: 700; /* Negrito como seus h2 */
+    color: #fff;
+}
+
+/* Botão de fechar (x) */
+.custom-project-modal-header .btn-close {
+    filter: invert(1); /* Inverte a cor do ícone para branco */
+    opacity: 0.7; /* Para combinar com a opacidade dos links da navbar */
+    transition: opacity 0.3s ease;
+}
+
+.custom-project-modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+/* Corpo do Modal */
+.custom-project-modal-body {
+    padding: 20px 30px;
+    font-size: 18px; /* Tamanho da fonte do corpo */
+    color: #B8B8B8; /* Cor de texto secundária */
+    line-height: 1.5em;
+}
+
+/* Rodapé do Modal */
+.custom-project-modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
+    padding: 20px 30px;
+    display: flex; /* Para alinhar os botões */
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+/* Estilo para os botões de ação (Ver Projeto, Ver no GitHub) */
+.custom-project-modal-button {
+    font-weight: 700;
+    color: #fff; /* Texto branco */
+    border: 1px solid #fff; /* Borda branca */
+    padding: 10px 20px; /* Padding menor que o da navbar, mas visível */
+    font-size: 16px;
+    position: relative;
+    background-color: transparent; /* Fundo transparente */
+    transition: 0.3s ease-in-out;
+    border-radius: 50px; /* Borda arredondada como seus .nav-pills */
+    overflow: hidden; /* Para o efeito hover */
+}
+
+/* Efeito hover nos botões (similar ao seu navbar button) */
+.custom-project-modal-button::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    /* Use um dos seus gradientes ou uma cor sólida para o hover */
+    background: linear-gradient(90deg, rgba(54,88,88,1) 0%, rgba(13,16,16,1) 100%);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+
+.custom-project-modal-button:hover {
+    color: #121212; /* Cor do texto no hover */
+}
+
+.custom-project-modal-button:hover::before {
+    width: 100%;
+}
+
+/* Estilo para o botão de fechar (se precisar de um visual diferente) */
+.custom-project-modal-close-button {
+    font-weight: 500; /* Menos negrito */
+    color: #B8B8B8; /* Cor de texto secundária */
+    background-color: transparent;
+    border: 1px solid #B8B8B8;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.custom-project-modal-close-button:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Um leve fundo no hover */
+    border-color: #fff;
+}
+
+/* Overwrite padrão do React-Bootstrap se necessário */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Deixa o fundo mais escuro */
+}
+
+/* Estilo de foco para os botões do modal para acessibilidade */
+.custom-project-modal-button:focus,
+.custom-project-modal-close-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(54, 88, 88, 0.5); /* Sombra de foco com a cor do seu gradiente */
+}
+/* --- Animações do Modal --- */
+
+/* Keyframes para a entrada (fade-in e slide-up) */
+@keyframes modalEnterAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Começa 50px abaixo da posição final */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina na posição original */
+    }
+}
+
+/* Keyframes para a saída (fade-out e slide-down) */
+@keyframes modalExitAnimation {
+    from {
+        opacity: 1;
+        transform: translateY(0); /* Começa na posição original */
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50px); /* Desce 50px e desaparece */
+    }
+}
+
+/* Aplica a animação de entrada quando o modal está visível */
+.modal.show .modal-dialog {
+    animation: modalEnterAnimation 0.4s ease-in-out forwards;
+}
+
+/* Classes para a animação de saída controlada por React */
+.modal-exit-down {
+    animation: modalExitAnimation 0.4s ease-in-out forwards;
+}
+
+/* Fundo (backdrop) pode ter um fade padrão do React-Bootstrap ou você pode ajustar */
+.modal-backdrop.fade.show {
+    opacity: 0.8 !important; /* Sua opacidade para o fundo escuro */
+    transition: opacity 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+/* Deixe o backdrop se comportar normalmente ao fechar (ele vai fade-out suavemente) */

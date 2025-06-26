@@ -4,6 +4,7 @@ import { ArrowRightCircle} from 'react-bootstrap-icons';
 import headerImg from "../assets/img/header-img5.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import StarfieldCanvas from './StarfieldCanvas';
 
 export const Banner = () => {
     const[loopNum, setLoopNum] = useState(0)
@@ -42,8 +43,12 @@ export const Banner = () => {
         }
     }
 
+    
     return(
         <section className="banner" id="home">
+            <StarfieldCanvas >
+            
+            </StarfieldCanvas>
             <Container>
                 <Row className="aling-item-center">
                     <Col xs={12} md={6} xl={7}>
@@ -51,14 +56,19 @@ export const Banner = () => {
                     {({ isVisible }) =>
                     <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                         <span className="tagline">Seja Bem vindo(a)</span>
-                        <h1>{`Transformando ideias em `}<span className="wrap">{text}</span></h1>
+                        <h2>{`Transformando ideias em `}<span className="wrap">{text}</span></h2>
                         <p>Olá! Sou Felipe, desenvolvedor de software apaixonado por 
                             tecnologia e inovação. Combinando criatividade e código, construo soluções 
                             eficientes e designs envolventes. Seja no desenvolvimento web, design gráfico ou no universo
                              dos games e cultura pop, estou sempre explorando 
                             novas formas de criar e impactar. Bem-vindo ao meu portfólio!</p>
-                            <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank"><button onClick={() => console.log('connect')}>Conecte-se<ArrowRightCircle size={25}/></button></a>
-              
+                            <a 
+                                href={require("../assets/curriculoAtualizado/Curriculo2025_BR3FelipeSilva.pdf")} 
+                                download="Curriculo_FelipeSilva.pdf"
+                            >
+                                <button type="button">Download CV<ArrowRightCircle size={25}/></button>
+                            </a>
+
                      </div>}       
                     </TrackVisibility>  
                     </Col>
