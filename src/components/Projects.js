@@ -13,6 +13,7 @@ import projImg5 from '../assets/img/projImg5.png';
 import projImg6 from '../assets/img/projImg6.png';
 import projImg7 from '../assets/img/projImg7.png';
 import projImg8 from '../assets/img/projImg8.png';
+import projImg9 from '../assets/img/projImg9.png';
 
 export const Projects = () => {
     const projects = [
@@ -77,6 +78,13 @@ export const Projects = () => {
             githubUrl: 'https://github.com/felkj/crud-veiculos',
             imgUrl: projImg8,
             tags: ["full-stack"]
+        },
+        {
+          title: "Microserviço de Agendamento de Exames e Consultas.",
+            description: "Aplicação distribuida utilizando RabbitMQ, Keycloak, Spring Boot Java, Grafana e Prometheus para observabilidade, e Docker para containerização.",
+            githubUrl: 'https://github.com/felkj/microservice-hospital',
+            imgUrl: projImg9,
+            tags: ["back-end"]
         }
     ];
 
