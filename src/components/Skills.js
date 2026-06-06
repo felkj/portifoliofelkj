@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import "react-multi-carousel/lib/styles.css";
-import  Carousel  from "react-multi-carousel"
+import Carousel from "react-multi-carousel"
+import { skillsData } from '../data/skills';
 import Angular from '../assets/img/Angular.svg';
 import BDDados from '../assets/img/BancoDeDados.svg';
 import CSS from '../assets/img/css.svg';
@@ -8,12 +9,24 @@ import HTML from '../assets/img/html.svg';
 import Java from '../assets/img/java.svg';
 import nodeJS from '../assets/img/nodejs.svg';
 import Git from '../assets/img/Git.svg';
-import Photoshop from '../assets/img/Photoshop.svg';
-import Illustrator from '../assets/img/Illustrator.svg';
 import React from '../assets/img/react.svg';
 import spring from '../assets/img/spring.svg';
 import TypeScript from '../assets/img/typescript.svg';
 import colorSharp from '../assets/img/color-sharp.png'
+
+// Mapeamento de imagens
+const skillImages = {
+  'Java.svg': Java,
+  'spring.svg': spring,
+  'Angular.svg': Angular,
+  'react.svg': React,
+  'typescript.svg': TypeScript,
+  'BancoDeDados.svg': BDDados,
+  'Git.svg': Git,
+  'nodejs.svg': nodeJS,
+  'html.svg': HTML,
+  'css.svg': CSS,
+};
 
 export const Skills = () => {
     const responsive = {
@@ -45,59 +58,19 @@ export const Skills = () => {
                             <h2>
                                 Habilidades e Ferramentas
                             </h2>
-                            <p>Tenho experiência em desenvolvimento Front-end e Back-end, trabalhando com tecnologias como:</p>
-                            <Carousel responsive={responsive}   infinite={true} className="skill-slider">
-                               <div className="item">
-                                <img src={HTML} alt="Imagem da ferramenta utilizada"/>
-                                <h5>HTML</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={CSS} alt="Imagem da ferramenta utilizada"/>
-                                <h5>CSS</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={Angular} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Angular</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={BDDados} alt="Imagem da ferramenta utilizada"/>
-                                <h5>SQL & Banco de Dados</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={TypeScript} alt="Imagem da ferramenta utilizada"/>
-                                <h5>TypeScript</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={Git} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Git/GitHub</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={Photoshop} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Photoshop</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={Illustrator} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Illustrator</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={Java} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Java</h5>
-                                </div>
-                               <div className="item">
-                                <img src={spring} alt="Imagem da ferramenta utilizada"/>
-                                <h5>Spring Framework</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={React} alt="Imagem da ferramenta utilizada"/>
-                                <h5>ReactJS</h5>
-                                </div>     
-                               <div className="item">
-                                <img src={nodeJS} alt="Imagem da ferramenta utilizada"/>
-                                <h5>NodeJS</h5>
-                                </div>
-                                    
+                            <p>Desenvolvedor Back-end com experiência em APIs REST, Microsserviços e Arquiteturas Distribuídas. Proficiente em Java, Spring Boot, RabbitMQ, Kafka, Redis, Prometheus e Grafana. Certificado AWS Cloud Practitioner com sólida experiência em Azure DevOps e metodologias ágeis.</p>
+                            <Carousel responsive={responsive} infinite={true} className="skill-slider">
+                               {skillsData.map((skill) => (
+                                 <div key={skill.id} className="item">
+                                    <img 
+                                      src={skillImages[skill.image] || BDDados} 
+                                      alt={skill.name}
+                                    />
+                                    <h5>{skill.name}</h5>
+                                 </div>
+                               ))}
                             </Carousel>
-                            <p> Sempre busco aprimorar minhas habilidades para entregar soluções eficientes e inovadoras! 🚀</p>   
+                            <p>Sempre buscando desafios técnicos reais e em constante evolução como desenvolvedor de software! 🚀</p>   
                         </div>
                     </Col>
                 </Row>

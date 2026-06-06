@@ -14,8 +14,8 @@ function App() {
       <NavBar/>
       <Banner/>
       <Skills/>
-      <Certifications/>
       <Projects/>
+      <Certifications/>
       <Contact/>
       <Footer/>
     </div>

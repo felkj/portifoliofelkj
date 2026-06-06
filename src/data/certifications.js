@@ -1,57 +1,61 @@
 // Dados de certificações - adicione suas certificações aqui
+// 
+// IMPORTANTE: Para cada certificação, escolha uma opção:
+// 1. credentialUrl: URL externa para verificação (ex: URL do Credly, EF SET, etc)
+// 2. certificatePdfPath: Caminho para PDF local em public/certificates/ (ex: "certificate-aws.pdf")
+//    - Para PDFs locais, coloque o arquivo em public/certificates/
+//    - Será aberto no navegador em nova aba (não faz download)
+//    - Use apenas o nome do arquivo, sem caminho completo
+
 export const certificationsData = [
   {
     id: 1,
-    title: "Certificação React Advanced",
-    issuer: "Alura",
-    date: "2024",
-    credentialUrl: "https://example.com/cert1", // Link para verificar no site do emissor
-    badgeUrl: "https://via.placeholder.com/120/4A90E2/FFFFFF/?text=React", // URL da badge/logo
-    description: "Certificação em React com foco em hooks, performance e padrões avançados.",
+    title: "Cloud Practitioner",
+    issuer: "AWS",
+    date: "2025",
+    credentialUrl: "https://cp.certmetrics.com/amazon/en/public/verify/credential/230285765b134f40ac5933c7ec100fea",
+    certificatePdfPath: null,
+    badgeUrl: "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png", 
+    description: "Certificação AWS Cloud Practitioner, demonstrando conhecimento fundamental dos serviços e conceitos de computação em nuvem da Amazon Web Services.",
   },
   {
     id: 2,
-    title: "Full-Stack JavaScript",
-    issuer: "Rocketseat",
-    date: "2024",
-    credentialUrl: "https://example.com/cert2",
-    badgeUrl: "https://via.placeholder.com/120/F7DF1E/000000/?text=JS",
-    description: "Formação completa em desenvolvimento full-stack com Node.js e React.",
+    title: "Ingles intermediário",
+    issuer: "EF SET",
+    date: "2025",
+    credentialUrl: "https://cert.efset.org/y6nfmj",
+    certificatePdfPath: null,
+    badgeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSOR4dthqoBpBogEkuIk672jrJj-BttJPwdQ&s",
+    description: "Certificado de Inglês intermediário, demonstrando habilidades de comunicação e compreensão em inglês.",
   },
   {
     id: 3,
-    title: "Angular Fundamentals",
-    issuer: "Angular.io Official",
-    date: "2023",
-    credentialUrl: "https://example.com/cert3",
-    badgeUrl: "https://via.placeholder.com/120/DD0031/FFFFFF/?text=Angular",
-    description: "Certificação oficial em fundamentos e boas práticas em Angular.",
+    title: "Java Fundamentos",
+    issuer: "FIAP",
+    date: "2025",
+    credentialUrl: null,
+    certificatePdfPath: "JavaDevelopment.pdf",
+    badgeUrl: "https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5",
+    description: "Certificação em fundamentos de Java com boas práticas de programação orientada a objetos.",
   },
   {
     id: 4,
-    title: "Git & GitHub Essentials",
-    issuer: "GitHub Learning Lab",
-    date: "2023",
-    credentialUrl: "https://example.com/cert4",
-    badgeUrl: "https://via.placeholder.com/120/181717/FFFFFF/?text=GitHub",
-    description: "Certificação em versionamento com Git e colaboração no GitHub.",
+    title: "GFT Start #7 Java",
+    issuer: "DIO",
+    date: "2025",
+    credentialUrl: "https://hermes.dio.me/certificates/KE8LJHGL.pdf",
+    certificatePdfPath: null,
+    badgeUrl: "https://yt3.googleusercontent.com/_HfgLNdU77la-nFe97KHYFdhfi1IH-1J0I9WUfC9vOeQZWXl53aPGiQG3y2MMwWz0wjgFN56Eiw=s900-c-k-c0x00ffffff-no-rj",
+    description: "Bootcamp de Java, com foco em desenvolvimento back-end, APIs REST e boas práticas de programação.",
   },
   {
     id: 5,
-    title: "Responsive Design",
-    issuer: "FreeCodeCamp",
-    date: "2023",
-    credentialUrl: "https://example.com/cert5",
-    badgeUrl: "https://via.placeholder.com/120/0A0E27/FFFFFF/?text=Design",
-    description: "Certificação em design responsivo e mobile-first development.",
-  },
-  {
-    id: 6,
-    title: "TypeScript Mastery",
-    issuer: "Udemy",
-    date: "2024",
-    credentialUrl: "https://example.com/cert6",
-    badgeUrl: "https://via.placeholder.com/120/3178C6/FFFFFF/?text=TS",
-    description: "Curso completo em TypeScript com tipos avançados e padrões.",
-  },
+    title: "GFT Start #7 .NET",
+    issuer: "DIO",
+    date: "2025",
+    credentialUrl: "https://hermes.dio.me/certificates/6CKSRZ0P.pdf",
+    certificatePdfPath: null,
+    badgeUrl: "https://yt3.googleusercontent.com/_HfgLNdU77la-nFe97KHYFdhfi1IH-1J0I9WUfC9vOeQZWXl53aPGiQG3y2MMwWz0wjgFN56Eiw=s900-c-k-c0x00ffffff-no-rj",
+    description: "Bootcamp de .NET, com foco em desenvolvimento back-end, APIs REST e boas práticas de programação.",
+  }
 ];

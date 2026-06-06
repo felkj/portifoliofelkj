@@ -1,24 +1,43 @@
-import { useState } from "react";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { useState, useCallback } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { certificationsData } from "../data/certifications";
+import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import TrackVisibility from "react-on-screen";
 import "animate.css";
 import "./Certifications.css";
 
 export const Certifications = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedCert, setSelectedCert] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentCert = certificationsData[currentIndex];
 
-  const handleShowModal = (cert) => {
-    setSelectedCert(cert);
-    setShowModal(true);
-  };
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? certificationsData.length - 1 : prev - 1
+    );
+  }, []);
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedCert(null);
-  };
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev === certificationsData.length - 1 ? 0 : prev + 1
+    );
+  }, []);
+
+  const goToCertification = useCallback((index) => {
+    setCurrentIndex(index);
+  }, []);
+
+  // Função para obter a URL do certificado (externa ou local)
+  const getCertificateUrl = useCallback(() => {
+    if (currentCert?.credentialUrl) {
+      return currentCert.credentialUrl;
+    }
+    if (currentCert?.certificatePdfPath) {
+      // Caminho público para o PDF local
+      return `/certificates/${currentCert.certificatePdfPath}`;
+    }
+    return null;
+  }, [currentCert]);
 
   return (
     <section className="certifications" id="certifications">
@@ -30,9 +49,9 @@ export const Certifications = () => {
                 <div
                   className={isVisible ? "animate__animated animate__fadeIn" : ""}
                 >
-                  <h2 className="certifications__title">Certificações</h2>
+                  <h2 className="certifications__title">Certificações Relevantes</h2>
                   <p className="certifications__subtitle">
-                    Formações e certificações obtidas ao longo da carreira
+                    Formações e certificados que conquistei ao longo da carreira
                   </p>
                 </div>
               )}
@@ -40,101 +59,86 @@ export const Certifications = () => {
           </Col>
         </Row>
 
-        <Row className="certifications__grid">
-          {certificationsData.map((cert, index) => (
-            <Col key={cert.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-              <TrackVisibility>
-                {({ isVisible }) => (
-                  <div
-                    className={`certification-card ${
-                      isVisible ? "animate__animated animate__zoomIn" : ""
-                    }`}
-                    onClick={() => handleShowModal(cert)}
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                    }}
+        {/* Carrossel Estilo Stories */}
+        <Row className="certifications__carousel">
+          <Col xs={12}>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={`carousel-container ${
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }`}
+                >
+                  {/* Botão Anterior */}
+                  <button
+                    className="carousel-button carousel-button-prev"
+                    onClick={handlePrev}
+                    aria-label="Certificação anterior"
                   >
-                    <div className="cert-badge">
+                    <ChevronLeft size={32} />
+                  </button>
+
+                  {/* Card Principal */}
+                  <div className="carousel-card">
+                    <div className="card-image">
                       <img
-                        src={cert.badgeUrl}
-                        alt={cert.issuer}
+                        src={currentCert?.badgeUrl}
+                        alt={currentCert?.issuer}
                         loading="lazy"
+                        className="cert-image"
                       />
                     </div>
-                    <div className="cert-content">
-                      <h5 className="cert-title">{cert.title}</h5>
-                      <p className="cert-issuer">{cert.issuer}</p>
-                      <span className="cert-date">{cert.date}</span>
-                    </div>
-                    <div className="cert-hover">
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleShowModal(cert);
-                        }}
-                      >
-                        Ver Detalhes
-                      </Button>
+                    <div className="card-content">
+                      <h3 className="card-title">{currentCert?.title}</h3>
+                      <p className="card-issuer">{currentCert?.issuer}</p>
+                      <p className="card-date">
+                        <span className="label">Obtida em:</span> {currentCert?.date}
+                      </p>
+                      <p className="card-description">{currentCert?.description}</p>
+                      {getCertificateUrl() && (
+                        <a
+                          href={getCertificateUrl()}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cert-link"
+                        >
+                          Ver Comprovante →
+                        </a>
+                      )}
                     </div>
                   </div>
-                )}
-              </TrackVisibility>
-            </Col>
-          ))}
+
+                  {/* Botão Próximo */}
+                  <button
+                    className="carousel-button carousel-button-next"
+                    onClick={handleNext}
+                    aria-label="Próxima certificação"
+                  >
+                    <ChevronRight size={32} />
+                  </button>
+                </div>
+              )}
+            </TrackVisibility>
+
+            {/* Dots Indicadores (Bolinhas) */}
+            <div className="carousel-dots">
+              {certificationsData.map((_, index) => (
+                <button
+                  key={index}
+                  className={`dot ${index === currentIndex ? "active" : ""}`}
+                  onClick={() => goToCertification(index)}
+                  aria-label={`Ir para certificação ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Contador */}
+            <div className="carousel-counter">
+              {currentIndex + 1} / {certificationsData.length}
+            </div>
+          </Col>
         </Row>
       </Container>
-
-      {/* Modal */}
-      <Modal
-        show={showModal}
-        onHide={handleCloseModal}
-        centered
-        className="cert-modal"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className="modal-title">
-            {selectedCert?.title}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="modal-content-wrapper">
-            <div className="modal-badge">
-              <img
-                src={selectedCert?.badgeUrl}
-                alt={selectedCert?.issuer}
-                loading="lazy"
-              />
-            </div>
-            <div className="modal-info">
-              <p className="info-label">
-                <strong>Emissor:</strong> {selectedCert?.issuer}
-              </p>
-              <p className="info-label">
-                <strong>Data:</strong> {selectedCert?.date}
-              </p>
-              <p className="info-description">{selectedCert?.description}</p>
-            </div>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={handleCloseModal}
-          >
-            Fechar
-          </Button>
-          <Button
-            variant="primary"
-            href={selectedCert?.credentialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver Comprovante
-          </Button>
-        </Modal.Footer>
-      </Modal>
 
       <img
         className="background-image-right"
