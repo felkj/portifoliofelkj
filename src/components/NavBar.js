@@ -4,7 +4,6 @@ import logo from '../assets/img/nav-elements/logo.svg';
 import navIcon1 from '../assets/img/nav-elements/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-elements/nav-icon4.svg';
 import navIcon3 from '../assets/img/nav-elements/nav-icon3.svg';
-import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
@@ -50,12 +49,12 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank"><img src={navIcon1} alt="Linkedin" /></a>
-                <a href="https://github.com/felkj" target="_blank"><img src={navIcon2} alt="Github" /></a>
-                <a href="mailto:felipep1424@gmail.com" target="_blank"><img src={navIcon3} alt="Enviar email" /></a>
+                <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank" rel="noreferrer"><img src={navIcon1} alt="Linkedin" /></a>
+                <a href="https://github.com/felkj" target="_blank" rel="noreferrer"><img src={navIcon2} alt="Github" /></a>
+                <a href="mailto:felipep1424@gmail.com" target="_blank" rel="noreferrer"><img src={navIcon3} alt="Enviar email" /></a>
               </div>
               
-                <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank"><button className="vvd"><span>Conecte-se</span></button></a>
+                <a href="https://www.linkedin.com/in/felipe-silva-9a5950242/" target="_blank" rel="noreferrer"><button className="vvd"><span>Conecte-se</span></button></a>
               
             </span>
           </Navbar.Collapse>
