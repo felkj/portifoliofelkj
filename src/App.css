@@ -797,3 +797,60 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     transition: opacity 0.3s ease-in-out; /* Adiciona uma transição suave */
 }
 /* Deixe o backdrop se comportar normalmente ao fechar (ele vai fade-out suavemente) */
+
+/* ===== TECHNOLOGIES SECTION ===== */
+.project-modal-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #B8B8B8;
+  margin-bottom: 1.5rem;
+}
+
+.project-technologies {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #00D4FF;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+.project-technologies strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(74, 144, 226, 0.2));
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  color: #00D4FF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(74, 144, 226, 0.3));
+  border-color: rgba(0, 212, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.project-modal-prompt {
+  font-size: 16px;
+  color: #B8B8B8;
+  margin: 1rem 0;
+  font-style: italic;
+}
