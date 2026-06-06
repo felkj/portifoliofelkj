@@ -63,7 +63,7 @@ export const Banner = () => {
                              dos games e cultura pop, estou sempre explorando 
                             novas formas de criar e impactar. Bem-vindo ao meu portfólio!</p>
                             <a 
-                                href={require("../assets/curriculoAtualizado/Curriculo2025_BR3FelipeSilva.pdf")} 
+                                href={require("../assets/curriculoAtualizado/Curriculo2026_BR.pdf")} 
                                 download="Curriculo_FelipeSilva.pdf"
                             >
                                 <button type="button">Download CV<ArrowRightCircle size={25}/></button>
