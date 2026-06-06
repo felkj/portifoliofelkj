@@ -2,21 +2,33 @@ import { Col, Container, Row } from "react-bootstrap";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel"
 import { skillsData } from '../data/skills';
-import Angular from '../assets/img/Angular.svg';
-import BDDados from '../assets/img/BancoDeDados.svg';
-import CSS from '../assets/img/css.svg';
-import HTML from '../assets/img/html.svg';
-import Java from '../assets/img/java.svg';
-import nodeJS from '../assets/img/nodejs.svg';
-import Git from '../assets/img/Git.svg';
-import React from '../assets/img/react.svg';
-import spring from '../assets/img/spring.svg';
-import TypeScript from '../assets/img/typescript.svg';
-import colorSharp from '../assets/img/color-sharp.png'
+import Angular from '../assets/img/skills/Angular.svg';
+import BDDados from '../assets/img/skills/BancoDeDados.svg';
+import CSS from '../assets/img/skills/CSS.svg';
+import HTML from '../assets/img/skills/HTML.svg';
+import Java from '../assets/img/skills/Java.svg';
+import nodeJS from '../assets/img/skills/nodejs.svg';
+import Git from '../assets/img/skills/Git.svg';
+import React from '../assets/img/skills/react.svg';
+import spring from '../assets/img/skills/spring.svg';
+import TypeScript from '../assets/img/skills/typescript.svg';
+import Azure from '../assets/img/skills/azure.svg';
+import AWS from '../assets/img/skills/aws.svg';
+import Redis from '../assets/img/skills/redis.svg';
+import Prometheus from '../assets/img/skills/prometheus.svg';
+import Grafana from '../assets/img/skills/grafana.svg';
+import Docker from '../assets/img/skills/docker.svg';
+import RabbitMQ from '../assets/img/skills/rabbitmq.svg';
+import Kafka from '../assets/img/skills/kafka.svg';
+import ApiRest from '../assets/img/skills/apirest.svg';
+import colorSharp from '../assets/img/backgrounds/color-sharp.png'
 
 // Mapeamento de imagens
 const skillImages = {
   'Java.svg': Java,
+  'HTML.svg': HTML,
+  'CSS.svg': CSS,
+  'apirest.svg': ApiRest,
   'spring.svg': spring,
   'Angular.svg': Angular,
   'react.svg': React,
@@ -26,6 +38,14 @@ const skillImages = {
   'nodejs.svg': nodeJS,
   'html.svg': HTML,
   'css.svg': CSS,
+  'azure.svg': Azure,
+  'aws.svg': AWS,
+  'redis.svg': Redis,
+  'prometheus.svg': Prometheus,
+  'grafana.svg': Grafana,
+  'docker.svg': Docker,
+  'rabbitmq.svg': RabbitMQ,
+  'kafka.svg': Kafka
 };
 
 export const Skills = () => {

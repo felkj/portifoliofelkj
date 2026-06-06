@@ -1,12 +1,12 @@
-import projImg1 from '../assets/img/projImg1.png';
-import projImg2 from '../assets/img/projImg2.png';
-import projImg3 from '../assets/img/projImg3.png';
-import projImg4 from '../assets/img/projImg4.png';
-import projImg5 from '../assets/img/projImg5.png';
-import projImg6 from '../assets/img/projImg6.png';
-import projImg7 from '../assets/img/projImg7.png';
-import projImg8 from '../assets/img/projImg8.png';
-import projImg9 from '../assets/img/projImg9.png';
+import projImg1 from '../assets/img/projects/projImg1.png';
+import projImg2 from '../assets/img/projects/projImg2.png';
+import projImg3 from '../assets/img/projects/projImg3.png';
+import projImg4 from '../assets/img/projects/projImg4.png';
+import projImg5 from '../assets/img/projects/projImg5.png';
+import projImg6 from '../assets/img/projects/projImg6.png';
+import projImg7 from '../assets/img/projects/projImg7.png';
+import projImg8 from '../assets/img/projects/projImg8.png';
+import projImg9 from '../assets/img/projects/projImg9.png';
 
 export const projectsData = [
   {

@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 import TrackVisibility from 'react-on-screen';
 import { ProjectCard } from './ProjectCards';
 import { projectsData } from '../data/projects';
-import colorSharp2 from '../assets/img/color-sharp2.png';
+import colorSharp2 from '../assets/img/backgrounds/color-sharp2.png';
 import 'animate.css';
 
 export const Projects = () => {

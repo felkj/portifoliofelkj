@@ -17,7 +17,7 @@ export const skillsData = [
     id: 3,
     name: "APIs REST",
     category: "backend",
-    image: "api.svg"
+    image: "apirest.svg"
   },
   // Microsserviços
   {
@@ -107,13 +107,13 @@ export const skillsData = [
     id: 17,
     name: "HTML",
     category: "frontend",
-    image: "html.svg"
+    image: "HTML.svg"
   },
   {
     id: 18,
     name: "CSS",
     category: "frontend",
-    image: "css.svg"
+    image: "CSS.svg"
   },
   // Tools & Versionamento
   {

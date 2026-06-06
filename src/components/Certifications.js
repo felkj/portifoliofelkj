@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { certificationsData } from "../data/certifications";
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import colorSharp2 from "../assets/img/backgrounds/color-sharp2.png";
 import TrackVisibility from "react-on-screen";
 import "animate.css";
 import "./Certifications.css";
